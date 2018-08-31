@@ -6,8 +6,25 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8E7A4D6C213393D3001D654D /* m2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D63213393D3001D654D /* m2.hpp */; };
+		8E7A4D6E213393D3001D654D /* Pool.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D66213393D3001D654D /* Pool.hpp */; };
+		8E7A4D6F213393D3001D654D /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D67213393D3001D654D /* Math.hpp */; };
+		8E7A4D70213393D3001D654D /* Timer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D68213393D3001D654D /* Timer.hpp */; };
+		8E7A4D71213393D3001D654D /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A4D69213393D3001D654D /* Pool.cpp */; };
+		8E7A4D72213393D3001D654D /* Common.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D6A213393D3001D654D /* Common.hpp */; };
+		8E9E696F2138030A008C727E /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E696E2138030A008C727E /* Math.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8E7A4D5B213393B8001D654D /* libm2.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libm2.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7A4D63213393D3001D654D /* m2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = m2.hpp; sourceTree = "<group>"; };
+		8E7A4D66213393D3001D654D /* Pool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Pool.hpp; sourceTree = "<group>"; };
+		8E7A4D67213393D3001D654D /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		8E7A4D68213393D3001D654D /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
+		8E7A4D69213393D3001D654D /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
+		8E7A4D6A213393D3001D654D /* Common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Common.hpp; sourceTree = "<group>"; };
+		8E9E696E2138030A008C727E /* Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +41,7 @@
 		8E7A4D52213393B8001D654D = {
 			isa = PBXGroup;
 			children = (
+				8E7A4D62213393D3001D654D /* m2 */,
 				8E7A4D5C213393B8001D654D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +54,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8E7A4D62213393D3001D654D /* m2 */ = {
+			isa = PBXGroup;
+			children = (
+				8E7A4D63213393D3001D654D /* m2.hpp */,
+				8E7A4D64213393D3001D654D /* m2 */,
+			);
+			path = m2;
+			sourceTree = "<group>";
+		};
+		8E7A4D64213393D3001D654D /* m2 */ = {
+			isa = PBXGroup;
+			children = (
+				8E7A4D69213393D3001D654D /* Pool.cpp */,
+				8E7A4D66213393D3001D654D /* Pool.hpp */,
+				8E9E696E2138030A008C727E /* Math.cpp */,
+				8E7A4D67213393D3001D654D /* Math.hpp */,
+				8E7A4D68213393D3001D654D /* Timer.hpp */,
+				8E7A4D6A213393D3001D654D /* Common.hpp */,
+			);
+			path = m2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +83,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7A4D70213393D3001D654D /* Timer.hpp in Headers */,
+				8E7A4D6E213393D3001D654D /* Pool.hpp in Headers */,
+				8E7A4D6F213393D3001D654D /* Math.hpp in Headers */,
+				8E7A4D72213393D3001D654D /* Common.hpp in Headers */,
+				8E7A4D6C213393D3001D654D /* m2.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7A4D71213393D3001D654D /* Pool.cpp in Sources */,
+				8E9E696F2138030A008C727E /* Math.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
