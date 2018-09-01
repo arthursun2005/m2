@@ -28,7 +28,7 @@ namespace m2 {
         _timer_(){
             Reset();
         }
-        /// @return the time elapsed between the last update
+        /// @return the time elapsed between the last update, this should be called once every frame
         double update(){
             _time_point_ now = clock.now();
             std::chrono::duration<float> elapsed = now-last;
@@ -58,7 +58,7 @@ namespace m2 {
             }
         }
         /// @brief adds a new timer to the map
-        void Add(const std::string& s, float v){
+        void Set(const std::string& s, float v){
             times[s] = v;
             progress[s] = 0.0f;
         }
@@ -73,6 +73,22 @@ namespace m2 {
         void Clear(){
             times.clear();
             progress.clear();
+        }
+        inline double operator [] (const std::string& s) const
+        {
+            return times[s];
+        }
+        inline double operator () (const std::string& s) const
+        {
+            return progress[s];
+        }
+        inline double& operator [] (const std::string& s)
+        {
+            return times[s];
+        }
+        inline double& operator () (const std::string& s)
+        {
+            return progress[s];
         }
     };
     
