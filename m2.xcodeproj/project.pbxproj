@@ -14,6 +14,7 @@
 		8E7A4D71213393D3001D654D /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A4D69213393D3001D654D /* Pool.cpp */; };
 		8E7A4D72213393D3001D654D /* Common.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8E7A4D6A213393D3001D654D /* Common.hpp */; };
 		8E9E696F2138030A008C727E /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E696E2138030A008C727E /* Math.cpp */; };
+		8E9E6976213A5B76008C727E /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E6975213A5B76008C727E /* Color.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		8E7A4D69213393D3001D654D /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
 		8E7A4D6A213393D3001D654D /* Common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Common.hpp; sourceTree = "<group>"; };
 		8E9E696E2138030A008C727E /* Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		8E9E69722139627B008C727E /* Color.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
+		8E9E6975213A5B76008C727E /* Color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				8E9E696E2138030A008C727E /* Math.cpp */,
 				8E7A4D67213393D3001D654D /* Math.hpp */,
 				8E7A4D68213393D3001D654D /* Timer.hpp */,
+				8E9E6975213A5B76008C727E /* Color.cpp */,
+				8E9E69722139627B008C727E /* Color.hpp */,
 				8E7A4D6A213393D3001D654D /* Common.hpp */,
 			);
 			path = m2;
@@ -148,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7A4D71213393D3001D654D /* Pool.cpp in Sources */,
+				8E9E6976213A5B76008C727E /* Color.cpp in Sources */,
 				8E9E696F2138030A008C727E /* Math.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
