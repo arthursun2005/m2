@@ -45,17 +45,18 @@ namespace m2 {
         void Set(float32_t r, float32_t g, float32_t b);
         void Set(float32_t c, float32_t a);
         void Set(float32_t c);
+        void Set(uint32_t hex, ColorMode mode);
         void Set(){
             this->r = 0.0f;
             this->g = 0.0f;
             this->b = 0.0f;
             this->a = 1.0f;
         }
-        void Add(const Color& c);
-        void Lerp(const Color& c, float32_t u);
+        void Add(const Color* const c);
+        void Lerp(const Color* const c, float32_t u);
         uint32_t getHex(ColorMode mode) const;
     };
-    void MixColors(Color& a, Color& b, float32_t u);
+    void MixColors(Color* const a, Color* const b, float32_t u);
 }
 
 

@@ -71,7 +71,6 @@ namespace m2 {
         /// a.GetInv() = Vec2(a.x, -a.y)
         Vec2 GetInv() const;
     };
-    /// A 2 by 2 matrix stored in column-major order
     struct mat22
     {
         Vec2 x;
@@ -139,7 +138,6 @@ namespace m2 {
         {
             return Vec2((q.x*v.x - q.y*v.y) + p.x, (q.y*v.x + q.x*v.y) + p.y);
         }
-        
     };
     struct AABB
     {

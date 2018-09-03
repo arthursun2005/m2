@@ -28,7 +28,8 @@ namespace m2 {
         _timer_(){
             Reset();
         }
-        /// @return the time elapsed between the last update, this should be called once every frame
+        /// @return the time elapsed between the last update
+        /// @brief this should be called once every frame
         double update(){
             _time_point_ now = clock.now();
             std::chrono::duration<float> elapsed = now-last;

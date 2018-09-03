@@ -13,7 +13,4 @@
 #include <unordered_map>
 #include <unordered_set>
 
-typedef float float32_t;
-typedef double float64_t;
-
 #endif /* Common_h */
