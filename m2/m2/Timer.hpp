@@ -33,7 +33,7 @@ namespace m2 {
         double update(){
             _time_point_ now = clock.now();
             std::chrono::duration<float> elapsed = now-last;
-            for(std::pair<std::string, float>& p : progress){
+            for(auto& p : progress){
                 p.second += elapsed.count();
             }
             last = now;
@@ -41,6 +41,7 @@ namespace m2 {
         }
         void Reset(){
             start = clock.now();
+            last = start;
         }
         /// @return the time between now and the start
         float GetTime() const
