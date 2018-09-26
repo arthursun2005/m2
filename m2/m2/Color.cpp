@@ -33,6 +33,12 @@ namespace m2 {
         this->b = c;
         this->a = 1.0f;
     }
+    void Color::Set(const Color& c){
+        this->r = c.r;
+        this->g = c.g;
+        this->b = c.b;
+        this->a = c.a;
+    }
     void Color::Set(uint32_t hex, ColorMode mode){
         switch (mode) {
             case RRGGBBAA:
@@ -51,20 +57,13 @@ namespace m2 {
                 break;
         }
     }
-    void Color::Add(const Color* const c)
+    void Color::Blend(const Color* const c)
     {
         float32_t a0 = 1.0f-c->a;
         r = a0*r + c->r*c->a;
         g = a0*g + c->g*c->a;
         b = a0*b + c->b*c->a;
         a = a0*a + c->a*c->a;
-    }
-    void Color::Lerp(const Color* const c, float32_t u)
-    {
-        r += (c->r-r) * u;
-        g += (c->g-g) * u;
-        b += (c->b-b) * u;
-        a += (c->a-a) * u;
     }
     uint32_t Color::getHex(ColorMode mode) const
     {
@@ -82,8 +81,9 @@ namespace m2 {
         }
     }
     void MixColors(Color* const a, Color* const b, float32_t u){
-        Color t = *a;
-        a->Lerp(b, u);
-        b->Lerp(&t, u);
+        Color _a = a->Lerp(b, u);
+        Color _b = b->Lerp(a, u);
+        a->Set(_a);
+        b->Set(_b);
     }
 }

@@ -9,9 +9,9 @@
 #ifndef m2_hpp
 #define m2_hpp
 
+#include "m2/Tree.hpp"
 #include "m2/Color.hpp"
 #include "m2/Math.hpp"
 #include "m2/Timer.hpp"
-#include "m2/Pool.hpp"
 
 #endif /* m2_hpp */

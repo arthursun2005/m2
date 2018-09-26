@@ -25,6 +25,7 @@ namespace m2 {
         std::unordered_map<std::string, float> times;
         std::unordered_map<std::string, float> progress;
     public:
+        double delta = 0.0f;
         _timer_(){
             Reset();
         }
@@ -37,7 +38,8 @@ namespace m2 {
                 p.second += elapsed.count();
             }
             last = now;
-            return elapsed.count();
+            delta = elapsed.count();
+            return delta;
         }
         void Reset(){
             start = clock.now();

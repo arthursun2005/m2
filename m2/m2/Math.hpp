@@ -50,10 +50,13 @@ namespace m2 {
     {
         float32_t x;
         float32_t y;
-        Vec2(){}
+        Vec2(){
+            x = 0.0f;
+            y = 0.0f;
+        }
         Vec2(float32_t x, float32_t y) : x(x), y(y){}
         void SetAngle(float32_t a);
-        Vec2(float32_t a){
+        Vec2(const float32_t& a){
             SetAngle(a);
         }
         void Set(float32_t x, float32_t y);
@@ -99,11 +102,11 @@ namespace m2 {
         Vec2 Solve(const Vec2 &a) const;
         void SetRotation(const Vec2 &q);
         bool GetInv(mat22& m) const;
-        inline mat22 T() const
+        mat22 T() const
         {
             return mat22(x.x, x.y, y.x, y.y);
         }
-        inline mat22 operator * (const mat22& a) const
+        mat22 operator * (const mat22& a) const
         {
             return mat22(x.x*a.x.x + y.x*a.x.y, x.x*a.y.x + y.x*a.y.y, x.y*a.x.x + y.y*a.x.y, x.y*a.y.x + y.y*a.y.y);
         }
@@ -162,6 +165,10 @@ namespace m2 {
             p.Set(a);
             q.SetAngle(b);
         }
+        inline void Set(const Transform& t){
+            p.Set(t.p);
+            q.Set(t.q);
+        }
         inline float32_t GetAngle() const
         {
             return atan2f(q.y, q.x);
@@ -187,10 +194,6 @@ namespace m2 {
         bool vsAABB(const AABB& a) const;
         bool vsPoint(const Vec2& a) const;
     };
-    /// @brief Add these rotation vectors
-    inline Vec2 Mul(const Vec2& a, const Vec2& b){
-        return Vec2(a.x*b.x - a.y*b.y, a.y*b.x + a.x*b.y);
-    }
     /// @brief rotate a vector by another
     /// @param a The vector to be rotated
     inline Vec2 Rot(const Vec2& a, const Vec2& b){
@@ -199,9 +202,9 @@ namespace m2 {
         return t;
     }
     /// @brief Apply a transform on another
-    inline Transform Mul(const Transform &a, const Transform &b)
+    inline Transform Mul(const Transform& a, const Transform& b)
     {
-        return Transform(Rot(b.p , a.q)+ a.p, Mul(a.q, b.q));
+        return Transform(Rot(a.p, b.q) + b.p, Rot(a.q, b.q));
     }
     inline void Vec2::ApplyTransform(const Transform& t)
     {
